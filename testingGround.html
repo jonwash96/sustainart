@@ -1,0 +1,128 @@
+<!Doctype="html">
+<HTML>
+<head>
+    <style>
+        #video-player {
+            position: relative;
+            padding: 10 0; 
+        }
+        .video {
+            width: 100%;
+        }
+        
+        
+    </style>
+    <link rel="stylesheet" href="testingGround.css">
+</head>
+<body>
+    <button onclick="PlayPause()" id="playpausebtn" style="display:block;width:100%;height:30px;">Play/Pause</button>
+
+    <p id="logp"></p>
+    <p id="logp2"></p>
+    <p style="display:inline;" id="logp3"></p><span> Seconds in</span>
+    <p id="logp4"></p>
+    
+    <div id="video-player">
+        <video class="video" id="video1" controls muted autoplay>
+          <source src="/assets/placeholderVid.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+    </div>
+    
+    <div id="image-slider">
+        <center>
+  
+        <!-- Image slider start -->
+        <div class="slider">
+            <div class="imgs_slides">
+  
+                <!-- Radio buttons start -->
+                <input type="radio" name="radio-btn" id="radio1" />
+  
+                <input type="radio" name="radio-btn" id="radio2" />
+  
+                <input type="radio" name="radio-btn" id="radio3" />
+  
+                <input type="radio" name="radio-btn" id="radio4" />
+  
+                <input type="radio" name="radio-btn" id="radio5" />
+  
+                <!-- Radio buttons end -->
+                <!-- Embedding  images start -->
+                <div class="first slide">
+                    <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210105130612/img1.PNG" />
+                </div>
+                <div class="slide">
+                    <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210105130614/img2.PNG" />
+                </div>
+                <div class="slide">
+                    <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210105130615/img3.PNG" />
+                </div>
+                <div class="slide">
+                    <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210105130616/img4.PNG" />
+                </div>
+                <div class="slide">
+                    <img src=
+"https://media.geeksforgeeks.org/wp-content/uploads/20210105130617/img5.PNG" />
+                </div>
+                <!-- Embedding images end -->
+            </div>
+  
+            <!-- Navigation start -->
+            <div class="navigation">
+                <label for="radio1" class="navigation-btn">
+                </label>
+                <label for="radio2" class="navigation-btn">
+                </label>
+                <label for="radio3" class="navigation-btn">
+                </label>
+                <label for="radio4" class="navigation-btn">
+                </label>
+                <label for="radio5" class="navigation-btn">
+                </label>
+            </div>
+            <!-- Navigation end -->
+        </div>
+        <!-- Image slider end -->
+    </center>
+    </div>
+</body>
+<script>
+    var video = document.getElementById("video1");
+    
+    function PlayPause() {  
+        var video1 = document.getElementById("video1");
+        if(video1.paused) {
+            video1.play();
+        } else {
+            video1.pause();
+          }
+    }
+    
+    // Calculate the time offset
+    var currentTime = new Date();
+    var currentMinute = currentTime.getMinutes();
+    var currentSecond = currentTime.getSeconds();
+    var offset = 0;
+    if (currentMinute >= 0 && currentMinute < 15) {
+      offset = 0;
+    } else if (currentMinute >= 15 && currentMinute < 30) {
+      offset = 15;
+    } else if (currentMinute >= 30 && currentMinute < 45) {
+      offset = 30;
+    } else {
+      offset = 45;
+    }
+    
+    video.currentTime = (( currentMinute - offset ) * 60) + currentSecond;
+    
+    document.getElementById("logp2").innerHTML = "Offset: ";
+    document.getElementById("logp2").innerHTML += offset;
+    document.getElementById("logp3").innerHTML = video.currentTime;
+    
+</script>
+</HTML>
