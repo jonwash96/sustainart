@@ -1,0 +1,117 @@
+<!Doctype="html">
+<HTML>
+<head>
+    <style>
+        #video-player {
+            position: relative;
+            padding: 10 0; 
+        }
+        .video {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="PlayPause()" id="playpausebtn" style="display:block;width:100%;height:30px;">Play/Pause</button>
+
+    <p id="logp"></p>
+    <p id="logp2"></p>
+    <p style="display:inline;" id="logp3"></p><span> Seconds in</span>
+    <p id="logp4"></p>
+    
+    <div id="video-player">
+        <video class="video" id="video1" controls muted>
+          <source 
+src="/assets/placeholders/placeholderVid.MP4" 
+type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
+    </div>
+</body>
+<script>
+    window.onload = conditionalStartPoint;
+
+    function PlayPause() {  
+        var video1 = document.getElementById("video1");
+        if(video1.paused) {
+            video1.play();
+        } else {
+            video1.pause();
+          }
+    }
+    
+// Get the current time
+var currentTime = new Date();
+// Dessect Time
+var currentHour = currentTime.getHours();
+var currentMinute = currentTime.getMinutes();
+var currentSecond = currentTime.getSeconds();
+var currentMS = currentTime.getMilliseconds();
+// PRINT currentTime
+    document.getElementById("logp").innerHTML = currentTime;
+
+// Calculate the time offset
+var offset = 0;
+if (currentMinute >= 0 && currentMinute < 15) {
+  offset = 0;
+} else if (currentMinute >= 15 && currentMinute < 30) {
+  offset = 15;
+} else if (currentMinute >= 30 && currentMinute < 45) {
+  offset = 30;
+} else {
+  offset = 45;
+}
+    
+
+// PRINT Calculate the time offset
+    var offset = 0;
+    if (currentMinute >= 0 && currentMinute < 15) {
+      document.getElementById("logp2").innerHTML = "offset = 0";
+    } else if (currentMinute >= 15 && currentMinute < 30) {
+      document.getElementById("logp2").innerHTML = "offset = 15";
+    } else if (currentMinute >= 30 && currentMinute < 45) {
+      document.getElementById("logp2").innerHTML = "offset = 30";
+    } else {
+      document.getElementById("logp2").innerHTML = "offset = 45";
+    }
+    
+// PRINT Video's current time
+    var video = document.getElementById("video1");
+    var vidCurrT = video.currentTime;
+    var currentPosition = video.currentTime;
+  // Set video's position
+//    video.currentTime = 123;
+    
+    function conditionalStartPoint() {
+        var zeroOffset = (currentMinute * 60) + currentSecond;
+        var fifteenOffset = ((currentMinute - 15) * 60) + currentSecond;
+        var thirtyOffset = ((currentMinute - 30) * 60) + currentSecond;
+        var fourtyFiveOffset = ((currentMinute - 45) * 60) + currentSecond;
+        
+        if (offset == 0) {
+            video.currentTime = zeroOffset;
+        } else if (offset == 15) {
+            video.currentTime = fifteenOffset;
+        } else if (offset == 30) {
+            video.currentTime = thirtyOffset;
+        } else if (offset == 45) {
+            video.currentTime = fourtyFiveOffset;
+        }
+    }
+    
+    document.getElementById("logp3").innerHTML = video.currentTime;
+    
+// PRINT Time Expression
+    document.getElementById("logp4").innerHTML = "The page was refreshed at exactly: ";
+    document.getElementById("logp4").innerHTML += currentHour;
+    document.getElementById("logp4").innerHTML += ":";
+    document.getElementById("logp4").innerHTML += currentMinute;
+    document.getElementById("logp4").innerHTML += ":";
+    document.getElementById("logp4").innerHTML += currentSecond;
+    document.getElementById("logp4").innerHTML += ":";
+    document.getElementById("logp4").innerHTML += currentMS;
+    
+
+    
+</script>
+</HTML>

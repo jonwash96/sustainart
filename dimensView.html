@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .dimensions-container {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        z-index: 11;
+          
+      }
+        .expanded {}
+
+      .dimensions-content {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.7);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px 0 0 10px;
+        color: white;
+        font-family: sans-serif;
+        font-size: 14px;
+        line-height: 1.5;
+        cursor: pointer;
+          
+      }
+
+      .dimensions-tab {
+        position: absolute;
+        top: 0;
+        right: -20px;
+        width: 20px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 0 10px 10px 0;
+          display: block;
+      }
+
+      .dimensions-tab-arrow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 10px;
+        height: 10px;
+        transform: translate(-50%, -50%) rotate(45deg);
+        border-top: 2px solid white;
+        border-right: 2px solid white;
+        cursor: pointer;
+      }
+
+      .dimensions-container.expanded .dimensions-content {
+        display: block;
+      }
+
+      .dimensions-container.collapsed .dimensions-tab-arrow {
+        transform: translate(-50%, -50%) rotate(-135deg); 
+      }
+        .dimensions-container.collapsed {
+        transform: translate(-100%); 
+      }
+    </style>
+  </head>
+  <body>
+<div name="VP-dimension-viewer">
+    <div class="dimensions-container">
+      <div class="dimensions-content">
+        <div class="dimensions-width">vWidth: <span class="dimensions-width-value"></span>px</div>
+        <div class="dimensions-height">vHeight: <span class="dimensions-height-value"></span>px</div>
+      </div>
+      <div class="dimensions-tab">
+        <div class="dimensions-tab-arrow"></div>
+      </div>
+    </div>
+</div>
+
+  <script>
+      window.onLoad = vpdim();
+        function vpdim() {
+            console.log("log vpdim:");
+            console.log(window.innerWidth + "px");
+            console.log(window.innerHeight + "px");
+        };
+      
+    // VP DIMENSIONS VIEWER //
+    const dimensionsContainer = document.querySelector('.dimensions-container');
+    const tabElement = document.querySelector('.dimensions-tab')
+    // set the initial width and height values
+    const widthValue = dimensionsContainer.querySelector('.dimensions-width-value');
+    const heightValue = dimensionsContainer.querySelector('.dimensions-height-value');
+    widthValue.textContent = window.innerWidth;
+    heightValue.textContent = window.innerHeight;
+
+    // TOGGLE
+    tabElement.addEventListener('click', () => {
+      dimensionsContainer.classList.toggle('collapsed');
+    });
+    // END OF VP DIMENSIONS VIEWER SCRIPT //
+
+
+</script>
+    
+</body>
+</html>

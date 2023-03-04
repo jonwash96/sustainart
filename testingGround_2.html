@@ -1,0 +1,232 @@
+<html>
+<head>
+    <link rel="stylesheet" href="testingGround_2.css">
+    
+    <style>
+.dimensions-container {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  z-index: 11;
+}
+
+.dimensions-content {
+  position: relative;
+  background-color: rgba(0, 255, 255, 0.7);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px 0 0 10px;
+  color: cyan;
+  font-family: sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.dimensions-tab {
+  position: absolute;
+  top: 0;
+  right: -20px;
+  width: 20px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 0 10px 10px 0;
+}
+
+.dimensions-tab-arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-top: 2px solid white;
+  border-right: 2px solid white;
+}
+
+.dimensions-container.expanded .dimensions-content {
+  display: block;
+}
+
+.dimensions-container.collapsed .dimensions-tab-arrow {
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+    </style>
+</head>
+<body>
+    
+    <div class="dimensions-container">
+  <div class="dimensions-content">
+    <div class="dimensions-width">vWidth: <span class="dimensions-width-value"></span></div>
+    <div class="dimensions-height">vHeight: <span class="dimensions-height-value"></span></div>
+  </div>
+  <div class="dimensions-tab">
+    <div class="dimensions-tab-arrow"></div>
+  </div>
+</div>
+
+    
+    
+    <!--PAGE 2-->
+    <div id="abouttheshow" class="page-container">
+        <center><img src="assets/AboutTheArtists_collage.png" id="pg2-title"></center>
+        <div id="p2-spacer"></div>
+        <div class="margin-container">
+            
+            <h3>About The Show</h3>
+        <center>
+        <div id="radio-nav">
+            <label for="radio1" class="slideNav-btn" id="sl1"></label>
+            <label for="radio2" class="slideNav-btn" id="sl2"></label>
+            <label for="radio3" class="slideNav-btn" id="sl3"></label>
+            <label for="radio4" class="slideNav-btn" id="sl4"></label>
+            <label for="radio5" class="slideNav-btn" id="sl5"></label>
+            
+        </div>
+            <img src="assets/slider_bg.svg" id="pm-slider">
+            <div id="sl-dot-container"><div id="sl-dot"></div></div>
+        </center>
+            
+<!--SLIDESHOW-->
+            <div id="about-slideshow" class="slideshow">
+                <!--radio buttons-->
+                <input type="radio" name="slide-selector" id="radio1" checked>
+                <input type="radio" name="slide-selector" id="radio2">
+                <input type="radio" name="slide-selector" id="radio3">
+                <input type="radio" name="slide-selector" id="radio4">
+                <input type="radio" name="slide-selector" id="radio5">
+                
+                <!--slides-->
+                <div id="about-sl1" class="about-slide">
+                    <p class="about-bodycopy">The latter part of the 20th century saw a dramatic shift in the art world, particularly in New York City. The avant-garde art scene was thriving, with artists like Andy Warhol, Jean-Michel Basquiat, and Keith Haring leading the way. These artists, who would become known as some of the most influential figures of the post-modern era, were pushing the boundaries of what was considered art, and exploring new and innovative ways to express their ideas and perspectives. Their works were bold, graphic, and often politically charged, reflecting the cultural and social upheaval of the time.
+                    <br><br>
+                    In the decades since, art has continued to evolve and expand, exploring new mediums and techniques and embracing new technologies. One of the biggest challenges facing artists today is sustainability. With the planet facing unprecedented environmental and social challenges, artists are being called upon to use their voices and their art to help raise awareness and drive change.</p>
+                    <img src="assets/NYSubway_photo.jpg">
+                </div>
+                <div id="about-sl2" class="about-slide">
+                    <p class="about-bodycopy">Andy Warhol was one of the most influential artists of the 20th century, often referred to as the “Pope of Pop Art.” He was born in Pittsburgh in 1928 and began his artistic career as a commercial illustrator before moving to New York in the 1950s. Warhol is best known for his colorful, bold and often controversial depictions of American popular culture, such as Campbell’s soup cans, Marilyn Monroe, and Elvis Presley. He also experimented with film, music and performance art, and was a key figure in the 1960s art scene in New York.</p>
+                    <img src="assets/Warhol_photo.jpg">
+                </div>
+                <div id="about-sl3" class="about-slide">
+                    <p class="about-bodycopy">Jean-Michel Basquiat was a rising star in the New York art world of the 1980s. Born in Brooklyn in 1960, he was a self-taught artist who began his career as a graffiti writer and later gained recognition for his distinctive style, combining elements of primitive, abstract, and figural art. Basquiat’s works are marked by a raw energy, social commentary, and a critique of power, race, and class. He quickly gained international recognition and was sought after by leading galleries and collectors. Sadly, Basquiat died at the young age of 27, but his legacy lives on as one of the most important and influential artists of his generation.</p>
+                    <img src="assets/Basquiat_photo.jpg">
+                </div>
+                <div id="about-sl4" class="about-slide">
+                    <p class="about-bodycopy">Keith Haring was a visionary artist and activist who rose to prominence in the 1980s. Born in Pennsylvania in 1958, he was inspired by the New York street art scene and began creating his own works using chalk on black paper in subway stations. Haring’s bold, simple, and graphic style quickly caught the attention of the art world, and he went on to create large-scale public murals, exhibitions, and commercial products. He was also deeply committed to social activism, using his art to address issues of war, AIDS, and other political and social issues. His impact on contemporary art continues to be felt today, and he is remembered as a cultural icon of the 20th century.</p>
+                    <img src="assets/Haring_photo.jpg">
+                </div>
+                <div id="about-sl5" class="about-slide">
+                    <p class="about-bodycopy">SustainArt—Exploring the Nexus of Post-Modernism, Sustainability and A.I. is a groundbreaking new installation that brings together the influences of these incredibly innovative and thought-provoking artists, regarded as the leaders of the post-modern art era. The show will explore the significance of sustainability in the world today and how important it is for our planet’s future and the survival of generations to come, through the artistic language of post-modern artists Warhol, Basquiat, and Haring, and implementing some of the most advanced technology of today as an extension of the artist’s creativity.</p>
+                    <img src="assets/HaringWarholBasquiat_photo.jpg">
+                </div>
+            </div>
+        </div>
+        
+<!--
+        <a id="about-prev" class="about-arrows" onclick="plusSlides(-1)">&larr;</a>
+        <a id="about-next" class="about-arrows" onclick="plusSlides(1)">&rarr;</a>
+-->
+        
+        
+    </div>
+    
+    
+    <script>
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+        
+          window.onLoad = delayTest();
+        async function delayTest() {
+            await delay(2000);
+            console.log("ck1: waited 2 seconds");
+            await delay(2000);
+            console.log("ck2: waited 2 more seconds");
+            await delay(500);
+            console.log("delay is functioning")
+        } 
+        
+        //        SLIDESHOW DOT
+        window.onload = slDotPosition();
+        let button = document.getElementsByClassName("slideNav-btn");
+        for (var i = 0 ; i < button.length; i++) {
+            button[i].addEventListener("click", slDotPosition, false);
+        }
+        async function slDotPosition() {
+            var slDot = document.getElementById("sl-dot");
+            var sl1 = document.getElementById("radio1");
+            var sl2 = document.getElementById("radio2");
+            var sl3 = document.getElementById("radio3");
+            var sl4 = document.getElementById("radio4");
+            var sl5 = document.getElementById("radio5");
+            
+            await delay(50);
+
+            if (sl1.checked) {
+                slDot.style.left = "0";
+                console.log("sl1 checked");
+            } else if (sl2.checked) {
+                slDot.style.left = "64";
+                console.log("sl2 checked");
+            } else if (sl3.checked) {
+                slDot.style.left = "128";
+                console.log("sl3 checked");
+            } else if (sl4.checked) {
+                slDot.style.left = "192";
+                console.log("sl4 checked");
+            } else if (sl5.checked) {
+                slDot.style.left = "256";
+                console.log("sl5 checked");
+            }
+        }
+        
+
+// create the container element for the viewport dimensions display
+const dimensionsContainer = document.createElement('div');
+dimensionsContainer.style.position = 'fixed';
+dimensionsContainer.style.top = '70px';
+dimensionsContainer.style.left = '0';
+dimensionsContainer.style.zIndex = '11';
+dimensionsContainer.style.backgroundColor = 'rgba(0, 255, 255, 0.7)';
+dimensionsContainer.style.padding = '10px';
+dimensionsContainer.style.border = '1px solid #ccc';
+dimensionsContainer.style.borderRadius = '10px 0 0 10px';
+dimensionsContainer.style.color = 'cyan';
+dimensionsContainer.style.fontFamily = 'sans-serif';
+dimensionsContainer.style.fontSize = '14px';
+dimensionsContainer.style.lineHeight = '1.5';
+dimensionsContainer.style.cursor = 'pointer';
+
+// add an event listener to the container element to remove it on click
+dimensionsContainer.addEventListener('click', () => {
+  dimensionsContainer.remove();
+});
+
+// create the text elements to display the viewport dimensions
+const widthText = document.createElement('div');
+widthText.textContent = `vWidth: ${window.innerWidth}px`;
+
+const heightText = document.createElement('div');
+heightText.textContent = `vHeight: ${window.innerHeight}px`;
+
+// add the text elements to the container element
+dimensionsContainer.appendChild(widthText);
+dimensionsContainer.appendChild(heightText);
+
+// add an event listener to the container element to toggle the expanded/collapsed classes
+dimensionsContainer.addEventListener('click', () => {
+  dimensionsContainer.classList.toggle('expanded');
+  dimensionsContainer.classList.toggle('collapsed');
+});
+
+// set the initial width and height values
+const widthValue = dimensionsContainer.querySelector('.dimensions-width-value');
+const heightValue = dimensionsContainer.querySelector('.dimensions-height-value');
+widthValue.textContent = window.innerWidth;
+heightValue.textContent = window.innerHeight;
+
+// add the container element to the document body
+document.body.appendChild(dimensionsContainer);
+
+    </script>
+</body>
+</html>

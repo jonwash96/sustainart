@@ -1,0 +1,165 @@
+:root {
+    --gold: #C4CB9F;
+}
+
+/*PAGE CONTAINERS*/
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    border: 2px solid orange;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.margin-container {
+    width: 950px;
+    max-width: 90vw;
+    border: 2px solid grey;
+    margin: 40px auto;
+/*    position: relative;*/
+}
+/*For reasons beyond my witts, any sort of positioning whatsoever declared in .margin-container breaks the slide nav*/
+
+
+/*ABOUT THE SHOW*/
+#abouttheshow .margin-container {
+    background-color: black;
+    color: white;
+    padding-top: 22vw;
+}
+
+#pg2-title {
+    position: absolute;
+    margin: 40px auto;
+    transform: translateX(-50%);
+    width: 50vw;
+    min-width: 300px;
+    z-index: 1;
+}
+#p2-spacer {
+    position: relative;
+    height: 12vw;
+}
+
+#abouttheshow h3 {
+    color: var(--gold);
+    text-align: center;
+    font-size: 30pt;
+    margin: 20px;
+}
+
+#abouttheshow p {
+    font-size: 14pt;
+    font-weight: 100;
+    line-height: 18pt;
+    padding: 0 10px;
+}
+
+.about-slide img {
+    width: 389px;
+    float: right;
+    padding:  10px;
+}
+
+#filigree {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+/*.slider*/
+#abouttheshow .margin-container {
+    margin: 100px auto;
+/*    border: 4px solid blue;*/
+    overflow: hidden;
+    z-index: -2;
+}
+/*imgs_slides*/
+#about-slideshow {
+    width: 500%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+/*.slide*/
+.about-slide {
+    width: 20%;
+    transition: 1.5s;
+}
+
+#sl-dot-container {
+    position: relative;
+/*    border: solid red 2px;*/
+    z-index: 1;
+    top: -51px;
+    left: 0;
+    height: 0px;
+    width: 278px;
+    margin: 0;
+    padding: 0;
+}
+#sl-dot {
+    width: 22px;
+    height: 22px;
+    background: var(--gold);
+    border-radius: 100%;
+    position: absolute;
+    z-index: 2;
+    top: 10;
+    left: 0;
+    transition: 1.5s;
+    transition-timing-function: cubic-bezier(0.0125, 0.1, 0.125, 1.0);
+}
+
+#about-slideshow input {display: none;}
+
+#radio1:checked~#about-sl1 {
+    margin-left: 0;
+}
+#radio2:checked~#about-sl1 {
+    margin-left: -40%;
+}
+#radio3:checked~#about-sl1 {
+    margin-left: -80%;
+}
+#radio4:checked~#about-sl1 {
+    margin-left: -120%;
+}
+#radio5:checked~#about-sl1 {
+    margin-left: -160%;
+}
+
+#radio-nav {
+    padding: 20px 0;
+    z-index: 10;
+    position: relative;
+}
+.slideNav-btn {
+    font-size: 1.75em;
+    border: 8px solid red;
+    background: red;
+    padding: 0 17px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: .5s;
+    z-index: 2;
+    position: relative;
+}
+  
+    .slideNav-btn:not(:last-child) {
+        margin-right: 26px;
+    }
+
+    .slideNav-btn:hover {
+        border: 8px solid var(--gold);
+        background: var(--gold);
+    }
+
+#pm-slider {
+    width: 395px;
+    position: absolute;
+    transform: translate(-50%, -90px);
+    z-index: 1;
+}
