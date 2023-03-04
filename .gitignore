@@ -1,1 +1,4 @@
-/assets/placeholders/placeholderVid.MP4
+assets/
+fonts/
+.DS_Store
+*.DS_Store
