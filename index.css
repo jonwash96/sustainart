@@ -496,12 +496,40 @@ h4 {
     display: flex;
     justify-content: center;
     align-items: top;
+    z-index: 2;
 }
 /*.slide*/
 .about-slide {
     width: 20%;
     transition: 1.5s;
 }
+
+.p2-arrownav {
+/*    border: 1px dotted magenta;*/
+    width: 90vw; max-width: 950px;
+    height: 20em;
+    position: absolute;
+    cursor: pointer;
+}
+.arrow {
+    width: 5em;
+    position: relative;
+    z-index: 1;
+    mix-blend-mode: color-dodge;
+    opacity: .5;
+    transition: 1s;
+    padding: 5em 0; 
+} .arrow:hover {opacity: 1; transition: 1s;}
+    .right-arr {
+        float: right;
+    }
+    .left-arr {
+        float: left;
+        transform: rotate(180deg);
+    }
+    .arr-end {
+        opacity: .05;
+    }
 
 @media screen and (max-width: 550px) {
     .p2-margin-container {max-width: 100vw;}

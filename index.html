@@ -106,8 +106,18 @@
             </div>
             </div>
         </center>
+        
+            <!--ARROWS-->
+            <div class="p2-arrows p2-arrownav">
+                <img src="assets/arrow.svg" class="left-arr arrow" onclick="prevSlide()">
+                <img src="assets/arrow.svg" class="right-arr arrow" onclick="nextSlide()">
+            </div>
+            <div class="p2-arrow-targets p2-arrownav">
+                <div class="left-tgt target"></div>
+                <div class="right-tgt target"></div>
+            </div>
             
-<!--SLIDESHOW-->
+            <!--SLIDESHOW-->
             <div id="about-slideshow" class="slideshow">
                 <!--radio buttons-->
                 <input type="radio" name="slide-selector" id="radio1" checked>
@@ -119,9 +129,9 @@
                 <!--slides-->
                 <div id="about-sl1" class="about-slide">
                     <p class="about-bodycopy">The latter part of the 20th century saw a dramatic shift in the art world, particularly in New York City. The avant-garde art scene was thriving, with artists like Andy Warhol, Jean-Michel Basquiat, and Keith Haring leading the way. These artists, who would become known as some of the most influential figures of the post-modern era, were pushing the boundaries of what was considered art, and exploring new and innovative ways to express their ideas and perspectives. Their works were bold, graphic, and often politically charged, reflecting the cultural and social upheaval of the time.
-                    <br><br>
+                    <img src="assets/NYSubway_photo.jpg" alt="A photograph of the New York Subway in the 1980s"><br><br>
                     In the decades since, art has continued to evolve and expand, exploring new mediums and techniques and embracing new technologies. One of the biggest challenges facing artists today is sustainability. With the planet facing unprecedented environmental and social challenges, artists are being called upon to use their voices and their art to help raise awareness and drive change.
-                    <img src="assets/NYSubway_photo.jpg" alt="A photograph of the New York Subway in the 1980s">
+                    
                     </p>
                 </div>
                 <div id="about-sl2" class="about-slide">
@@ -145,7 +155,7 @@
                     </p>
                 </div>
             </div>
-        </div>    
+        </div>
     </div>
 
 <!--PAGE 3-->
@@ -256,7 +266,13 @@
             }
     }
 
-    //        SLIDESHOW DOT
+    //        SLIDESHOW DOT         //
+        var sl1 = document.getElementById("radio1");
+        var sl2 = document.getElementById("radio2");
+        var sl3 = document.getElementById("radio3");
+        var sl4 = document.getElementById("radio4");
+        var sl5 = document.getElementById("radio5");
+    
     window.onload = slDotPosition();
     let button = document.getElementsByClassName("slideNav-btn");
     for (var i = 0; i < button.length; i++) {
@@ -268,12 +284,7 @@
             for (var i = 0; i < slDot.length; i++) {}
         var abth = document.getElementsByClassName("about-heading");
             for (var i = 0; i < abth.length; i++) {}
-        var sl1 = document.getElementById("radio1");
-        var sl2 = document.getElementById("radio2");
-        var sl3 = document.getElementById("radio3");
-        var sl4 = document.getElementById("radio4");
-        var sl5 = document.getElementById("radio5");
-
+        
         await delay(50);
 
         if (sl1.checked) {
@@ -312,6 +323,25 @@
                 if (i !== 4) {abth[i].style.opacity = "0";} }
             console.log("sl5 checked");
         }
+    }
+    var lArr = document.getElementsByClassName("left-arr")[0];
+    var rArr = document.getElementsByClassName("rigth-arr")[0];
+    //ARROW SLIDE NAV//
+    function nextSlide() {        
+        if (sl1.checked) {sl2.checked = true;}
+        else if (sl2.checked) {sl3.checked = true;}
+        else if (sl3.checked) {sl4.checked = true;}
+        else if (sl4.checked) {sl5.checked = true;}
+        else if (sl5.checked) {rArr.addClass("arr-end");}
+        slDotPosition()
+    }
+    function prevSlide() {        
+        if (sl5.checked) {sl4.checked = true;}
+        else if (sl4.checked) {sl3.checked = true;}
+        else if (sl3.checked) {sl2.checked = true;}
+        else if (sl2.checked) {sl1.checked = true;}
+        else if (sl1.checked) {lArr.addClass("arr-end");}
+        slDotPosition()
     }
 
 
