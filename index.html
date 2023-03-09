@@ -19,7 +19,7 @@
             <div id="navbar">
                 <div id="nav-logo-container">
                     <div id="logo-touch-target" onclick="toggleddn()"></div>
-                    <a  onclick="toggleddn()" onmouseover="toggleddn()">
+                    <a  onclick="toggleddn()" >
                     <img src="assets/logo_grey.png" id="nav-logo-grey" class="nav-logo">
                     </a>
                     
@@ -150,7 +150,7 @@
                     </p>
                 </div>
                 <div id="about-sl5" class="about-slide">
-                    <p class="about-bodycopy">SustainArt—Exploring the Nexus of Post-Modernism, Sustainability &amp; A.I. is a groundbreaking new installation that brings together the influences of these incredibly innovative and thought-provoking artists, regarded as the leaders of the post-modern art era. The show will explore the significance of sustainability in the world today and how important it is for our planet&apos;s future and the survival of generations to come, through the artistic language of post-modern artists Warhol, Basquiat, and Haring, and implementing some of the most advanced technology of today as an extension of the artist’s creativity.
+                    <p class="about-bodycopy">SustainArt&mdash;Exploring the Nexus of Post-Modernism, Sustainability &amp; A.I. is a groundbreaking new installation that brings together the influences of these incredibly innovative and thought-provoking artists, regarded as the leaders of the post-modern art era. The show will explore the significance of sustainability in the world today and how important it is for our planet&apos;s future and the survival of generations to come, through the artistic language of post-modern artists Warhol, Basquiat, and Haring, and implementing some of the most advanced technology of today as an extension of the artist&apos;s creativity.
                     <img src="assets/HaringWarholBasquiat_photo.jpg" alt="A photograph of Keith Haring, Andy Warhol & Jean-Michel Basquiat">
                     </p>
                 </div>
@@ -174,7 +174,7 @@
                 <div id="p3-text-block">
                     <div id="p3-bodycopy-container">
                         <div id="p3-bodycopy-background"></div>
-                        <p class="p3 body-copy">Hi, I’m JON. I’m much more of an ideas person than just a painter-by-feel or an artist who’s really good at replicating what he see’s thru his chosen medium or one who can just come up with really creative imagery without any sort of evident inspiration. I have a formal post-secondary education in Design, which of course includes an art background, but is tailored more toward problem-solving, but even in that, I’ve always had more of a knack for ideas in process and information, moreso than pure visuals and aesthetics. So my artform is more about the abstract what as opposed to the concrete what, but through that, I come up with and utilize different processes to create visually stunning work, but visually stunning work that is deeply rooted in the information and concept that it comes from.
+                        <p class="p3 body-copy">Hi, I'm JON. I’m much more of an ideas person than just a painter-by-feel or an artist who’s really good at replicating what he see’s thru his chosen medium or one who can just come up with really creative imagery without any sort of evident inspiration. I have a formal post-secondary education in Design, which of course includes an art background, but is tailored more toward problem-solving, but even in that, I’ve always had more of a knack for ideas in process and information, moreso than pure visuals and aesthetics. So my artform is more about the abstract what as opposed to the concrete what, but through that, I come up with and utilize different processes to create visually stunning work, but visually stunning work that is deeply rooted in the information and concept that it comes from.
                         <br>
                         So with my particular artist style, one Idea I've has is to use this new, cutting edge thing, which puts the value of art and what it means to be an artist this day in age in question, and provide to that qualm an answer in the form of a work of art which utilises it as a tool in an artistically responsible way to aid my process without substituting it as my practice.
                         </p>
@@ -201,7 +201,8 @@
       <div class="dimensions-content">
         <div class="dimensions-width">vWidth: <span class="dimensions-width-value"></span>px</div>
         <div class="dimensions-height">vHeight: <span class="dimensions-height-value"></span>px</div>
-          <div>Mar 4, 10:44am</div>
+          <div id="device-type"></div>
+          <div>Mar 8, 12:40am</div>
       </div>
       <div class="dimensions-tab">
         <div class="dimensions-tab-arrow"></div>
@@ -228,6 +229,29 @@
         await delay(500);
         console.log("delay is functioning")
     } 
+    
+    //DETECT IPAD//    
+    window.onload = isDeviceiPad();
+    function isDeviceiPad(){
+        var isiPad = navigator.platform.match(/iPad/i);
+        var deviceType = document.getElementById("device-type");
+        
+        if (isiPad == null) {
+        console.log("not an iPad");
+        deviceType.innerHTML = "not an iPad";
+        } else {
+            console.log("must be an iPad");
+            deviceType.innerHTML = isiPad;
+            
+            document.getElementsByClassName("oe1")[0].style.transform = "translate(38px, 19px)";
+            document.getElementsByClassName("oe2")[0].style.transform = "translate(179px, 95px)";
+        }
+    }
+    
+    window.onLoad = p2s3iPad();
+    function p2s3iPad() {
+        document.getElementById("abth-3").style.left = "-1.5vw";
+    }
 
     //EVENT DISCRIMINATOR FOR TOUCH DEVICES//
     function hasTouch() {
@@ -235,9 +259,15 @@
             || navigator.maxTouchPoints > 0
             || navigator.msMaxTouchPoints > 0;
     }
-
-    if (!hasTouch()) {
-        document.getElementById("ddn-bg").setAttribute("onmouseover", "toggleddn()");
+    
+    window.onload = touchConditionals();
+    function touchConditionals() {
+        if (!hasTouch()) {
+            document.getElementById("nav-logo-grey").setAttribute("onmouseover", "toggleddn()");
+        }
+        if (!hasTouch()) {
+            document.getElementById("ddn-bg").setAttribute("onmouseover", "toggleddn()");
+        }
     }
 
     //NAVBAR LOAD-SCROLL ANIMATION//
@@ -286,6 +316,17 @@
             for (var i = 0; i < abth.length; i++) {}
         
         await delay(50);
+        
+        var rArr = document.getElementsByClassName("right-arr")[0];
+        var lArr = document.getElementsByClassName("left-arr")[0];
+        if (sl5.checked) {
+            rArr.classList.add("arr-end");
+            lArr.classList.remove("arr-end");
+        } else {rArr.classList.remove("arr-end");}
+        if (sl1.checked) {
+            lArr.classList.add("arr-end");
+            rArr.classList.remove("arr-end");
+        } else {lArr.classList.remove("arr-end");}
 
         if (sl1.checked) {
             slDot.style.left = "0";
@@ -324,15 +365,21 @@
             console.log("sl5 checked");
         }
     }
+    
+    //NAV ARROWS//
     var lArr = document.getElementsByClassName("left-arr")[0];
-    var rArr = document.getElementsByClassName("rigth-arr")[0];
+    var rArr = document.getElementsByClassName("right-arr")[0];
     //ARROW SLIDE NAV//
+    window.onLoad = initArrow();
+    function initArrow() {lArr.classList.add("arr-end")}
     function nextSlide() {        
         if (sl1.checked) {sl2.checked = true;}
         else if (sl2.checked) {sl3.checked = true;}
         else if (sl3.checked) {sl4.checked = true;}
         else if (sl4.checked) {sl5.checked = true;}
-        else if (sl5.checked) {rArr.addClass("arr-end");}
+        if (sl5.checked) {rArr.classList.add("arr-end");}
+        if (sl1.checked) {lArr.classList.add("arr-end");} 
+            else {lArr.classList.remove("arr-end");}
         slDotPosition()
     }
     function prevSlide() {        
@@ -340,7 +387,8 @@
         else if (sl4.checked) {sl3.checked = true;}
         else if (sl3.checked) {sl2.checked = true;}
         else if (sl2.checked) {sl1.checked = true;}
-        else if (sl1.checked) {lArr.addClass("arr-end");}
+        if (sl5.checked) {rArr.classList.add("arr-end");} 
+            else {rArr.classList.remove("arr-end");}
         slDotPosition()
     }
 
