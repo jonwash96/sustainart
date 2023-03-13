@@ -695,6 +695,11 @@ a:visited {color: #444; text-decoration: none;}
     cursor: pointer;
 }
 
+.home-btn:hover {
+    background: #A0CDFF;
+    cursor: pointer;
+}
+
 
 footer {
     background: black;
