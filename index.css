@@ -675,13 +675,24 @@ a:visited {color: #444; text-decoration: none;}
 }
 
 #view-the-show-eyes {
-    width: 90vw; max-width: 900px;
-    
+    width: 90vw; height: 300px; max-width: 900px;
+    position: relative;
 }
 #viewing-eyes {
     width: 100%;
-    position: relative;
+    position: absolute;
     margin: 0 auto;
+    
+}
+
+.view-the-show-btn {
+    position: absolute;
+    display: block;
+    right: 120; top: 100;
+}
+.view-the-show-btn:hover {
+    background: #A0CDFF;
+    cursor: pointer;
 }
 
 
