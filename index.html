@@ -30,6 +30,7 @@
                                 <div id="logotype-text"><strong>H&amp;M Art Show 2023</strong><br>jonwashDesign</div>
                             </div><hr>
                             <ul>
+                                <li><a href="discord.html">AI Art Discord<span>	&#62;</span></a></li>
                                 <li><a href="videoxp.html">Video Experience<span>	&#62;</span></a></li>
                                 <li><a href="http://www.jonwashdesign.com" target="_blank">My Portfolio Site<span>	&#62;</span></a></li>
                                 <li><a href="bts.html">Behind the Scenes<span>	&#62;</span></a></li>
@@ -48,6 +49,13 @@
                 </ul></div>
             </div>
     </div></nav>
+    
+<!--PAGE BG-->
+    <div id="bg-container">
+        <img src="assets/halftone_wave.png" id="bg-ht-wave">
+        <img src="assets/wave_stroke.svg" id="bg-wave-stroke">
+        <img src="assets/diamond_shape.png" id="bg-diamond">
+    </div>
     
 <!--PAGE 1-->
     <div id="sustainart" class="page-container">
@@ -174,9 +182,13 @@
                 <div id="p3-text-block">
                     <div id="p3-bodycopy-container">
                         <div id="p3-bodycopy-background"></div>
-                        <p class="p3 body-copy">Hi, I'm JON. I’m much more of an ideas person than just a painter-by-feel or an artist who’s really good at replicating what he see’s thru his chosen medium or one who can just come up with really creative imagery without any sort of evident inspiration. I have a formal post-secondary education in Design, which of course includes an art background, but is tailored more toward problem-solving, but even in that, I’ve always had more of a knack for ideas in process and information, moreso than pure visuals and aesthetics. So my artform is more about the abstract what as opposed to the concrete what, but through that, I come up with and utilize different processes to create visually stunning work, but visually stunning work that is deeply rooted in the information and concept that it comes from.
-                        <br>
-                        So with my particular artist style, one Idea I've has is to use this new, cutting edge thing, which puts the value of art and what it means to be an artist this day in age in question, and provide to that qualm an answer in the form of a work of art which utilises it as a tool in an artistically responsible way to aid my process without substituting it as my practice.
+                        <p class="p3 body-copy">Hi, I'm JON. I&apos;m a graphic designer &amp; artist and have been pracing various forms of graphic art and visual communication for a couple years shy of a decade. I received my BFA from the Milwaukee Institute of Art &amp; Design (MIAD) in the spring of 2021 and have continued my practice on my own since then, doing freelance work from time to time.
+                        <br><br>
+                        From 2018–2019, I worked on a startup business as a team lead twice to develop a SAAS product called <a href="http://www.jonwashDesign.com/Hivemind">Hivemind</a> before continuing the project on my own in 2021. Unfortunately, the product didn't get enough support or funding and so remains on the back-burner for another time, but I'm always on the lookout for new business and entrepreneurial opportunities wherever I can find them.
+                        <br><br>
+                        I consider myself to be a designer before an artist, as that's the kind of work I get paid to do as a freelancer, but I certainly have a body of artwork to my name as well. As an artist, my typical media include digital graphics and light-painting-photography, but I&apos;ve been painting more in recent months, both digitally and with acryllics. I&apos;ve also been working a lot with web, UI & UX design, like this website for example, all hand coded by myself.
+                        <br><br>
+                        I hope you enjoy the show, and feel free to check out my other work on my website as well.
                         </p>
                     </div>
                     <img src="assets/AboutTheDesigner_collage.png" id="selfie-collage" alt="JON Washington - designer profile collage">
@@ -187,11 +199,12 @@
 <!--PAGE 4-->
     <div id="viewtheshow" class="page-container">
         <div class="margin-container">
-            <img id="viewtheshow_image" src="assets/basquiat_practice1_mat.png">
-            <p class="body-copy">So now that you understand my background as an artist and what I’m doing with this project, enjoy the show! Scan the QR codes around the room to go deeper, learn more about the art and these great artists of influence, interact with my work on your device and share with your friends!</p>
-            <center>
+            <center><img id="viewtheshow_image" src="assets/basquiat_practice1_mat.png"></center>
+            <p class="body-copy">So now that you understand my background as an artist and what I&apos;m doing with this project, enjoy the show! Scan the QR codes around the room to go deeper, learn more about my art, these great artists of influence and the big picture sustainability issues that the show is intended to bring awareness to, and share with your friends!</p><br><br>
+            <div id="view-the-show-eyes">
                 <img src="assets/collagescramble_cropped.gif" id="viewing-eyes" alt="View the show">
-            </center>
+                <a href="all_work.html"><h2 class="headertxt view-the-show-btn">View the Show &#62;</h2></a>
+            </div>
         </div>
     </div>
     
@@ -202,7 +215,7 @@
         <div class="dimensions-width">vWidth: <span class="dimensions-width-value"></span>px</div>
         <div class="dimensions-height">vHeight: <span class="dimensions-height-value"></span>px</div>
           <div id="device-type"></div>
-          <div>Mar 8, 12:40am</div>
+          <div>Mar 13, 4:09am</div>
       </div>
       <div class="dimensions-tab">
         <div class="dimensions-tab-arrow"></div>
@@ -271,12 +284,12 @@
     }
 
     //NAVBAR LOAD-SCROLL ANIMATION//
-    window.onLoad = navbarInit();
-    async function navbarInit() {
-        var navLeft = document.querySelector("#navbar-ul");
-        await delay(100);
-        navLeft.style.paddingLeft = "10%";
-    }
+//    window.onLoad = navbarInit();
+//    async function navbarInit() {
+//        var navLeft = document.querySelector("#navbar-ul");
+//        await delay(100);
+//        navLeft.style.paddingLeft = "10%";
+//    }
 
     //        DROPDOWN MENU         //
     let ddn = document.getElementById("logo-dropdown");

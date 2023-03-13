@@ -1,0 +1,101 @@
+<html>
+    <head>
+        <title>SustainArt - Jean-Michel Basquiat | H&amp;M Art Show 2023</title>
+        <meta name="description" content="&ldquo;SustainArt: Exploring the Nexus of Post Modernism, Sustainability and Artificial Intelligence&rdquo; is a Spring 2023  art show by artist JON Washington focusing on the topic of sustainability,  through the lenses of 3 of the most prominent post-modern artists of the last great art movement and incorporating some of the most advanced technology availible today, at the inception of a new generation of art. This page features work inspired by artist Keith Haring">
+        <link rel ="icon" type="image/png" href="assets/logo_grey.png">
+
+        <meta name="author" content="JON Washington | www.jonwashDesign.com">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" minimum-scale="1">
+
+        <link rel="stylesheet" href="index.css">
+    </head>
+    
+    <body>
+         <nav><div id="nav">
+            <div id="navbar">
+                <div id="nav-logo-container">
+                    <div id="logo-touch-target" onclick="toggleddn()"></div>
+                    <a  onclick="toggleddn()" >
+                    <img src="assets/logo_grey.png" id="nav-logo-grey" class="nav-logo">
+                    </a>
+                    
+                    <div id="logo-dropdown" >
+                        <div id="ddn-menu">
+                            <div id="ddn-toplvl">
+                                <a  id="nav-logo-orange" class="nav-logo"><img src="assets/logo_orange.png"></a>
+                                <div id="logotype-text"><strong>H&amp;M Art Show 2023</strong><br>jonwashDesign</div>
+                            </div><hr>
+                            <ul>
+                                <li><a href="discord.html">AI Art Discord<span>	&#62;</span></a></li>
+                                <li><a href="videoxp.html">Video Experience<span>	&#62;</span></a></li>
+                                <li><a href="http://www.jonwashdesign.com" target="_blank">My Portfolio Site<span>	&#62;</span></a></li>
+                                <li><a href="bts.html">Behind the Scenes<span>	&#62;</span></a></li>
+                            </ul>
+                    </div>
+                        <div id="ddn-bg" style="width: 100vw; height: 100vh; margin: auto; background-color: #FFFFFF44; position: absolute; top: 0; left: 0;" onclick="toggleddn()">&nbsp;</div>
+                    </div>
+                </div>
+                <div class="fade-box fbx-left"></div>
+                <div class="fade-box fbx-right"></div>
+                <div id="nav-ul-container"><ul id="navbar-ul">
+                    <li><a href="index.html#sustainart">SustainArt</a></li>
+                    <li><a href="index.html#abouttheshow">About The Show</a></li>
+                    <li><a href="index.html#aboutthedesigner">About The Designer</a></li>
+                    <li><a href="index.html#viewtheshow">View The Show</a></li>
+                </ul></div>
+            </div>
+    </div></nav>
+        
+        <div class="page-container">
+            <center><h1>This page is currently under construction. <br>
+                Please check back later!</h1></center>
+            <form><input type="button" value="< Back" onclick="history.back()"></form>
+        </div>
+        
+        <script>
+            const delay = ms => new Promise(res => setTimeout(res, ms));
+            
+            //EVENT DISCRIMINATOR FOR TOUCH DEVICES//
+    function hasTouch() {
+        return 'ontouchstart' in document.documentElement
+            || navigator.maxTouchPoints > 0
+            || navigator.msMaxTouchPoints > 0;
+    }
+    
+    window.onload = touchConditionals();
+    function touchConditionals() {
+        if (!hasTouch()) {
+            document.getElementById("nav-logo-grey").setAttribute("onmouseover", "toggleddn()");
+        }
+        if (!hasTouch()) {
+            document.getElementById("ddn-bg").setAttribute("onmouseover", "toggleddn()");
+        }
+    }
+            
+                //        DROPDOWN MENU         //
+    let ddn = document.getElementById("logo-dropdown");
+        async function toggleddn(){
+            if (!ddn.classList.contains("openddn")) {
+                ddn.classList.toggle("openddn");
+                ddn.style.display = "block";
+                await delay(100);
+                ddn.style.opacity = "100";
+                console.log("opened");
+            } else if (ddn.classList.contains("openddn")) {
+                ddn.classList.toggle("openddn");
+                ddn.style.opacity = "0";
+                await delay(300);
+                ddn.style.display = "none";
+                console.log("closed");
+            }
+    }
+        </script>
+        
+        <footer>
+    <p>jonwashDesign 2023</p>
+    <p>Designed in Saint Charles, IL</p>
+    <p>Visit <a href="http://www.jonwashdesign.com" target="_blank">jonwashDesign.com</a> to view more of my work</p>
+</footer>
+    </body>
+</html>

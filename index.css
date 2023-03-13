@@ -88,7 +88,7 @@ nav {
     margin: 0 auto;
     padding: 10px 0;
     top: 0;
-    width: 120%;
+    width: 100%;
     display: block;
     position: relative;
     min-width: 553px;
@@ -213,6 +213,30 @@ nav {
     #logo-dropdown ul li a span {float: right; transition: 1s}
     #logo-dropdown ul li a:hover span {transform: translateX(5px);}
 
+/*PAGE BACKGROUND*/
+#bg-ht-wave {
+    position: absolute;
+    z-index: -1;
+/*    width: calc(3800px / 2.5);*/
+    max-width: 170%;
+}
+
+#bg-wave-stroke {
+    position: absolute;
+    z-index: -1;
+/*    width: calc(3800px / 3.5);*/
+    width: 100%;
+    top: 32vw; left: 60;
+}
+
+#bg-diamond {
+    position: relative;
+    z-index: -1;
+/*    width: calc(3800px / 3.5);*/
+    width: 100%;
+    top: 60vw; left: -45vw;
+}
+
 /*--PAGE CONTAINERS--*/
 .page-container {
     width: 100%;
@@ -231,6 +255,13 @@ nav {
     margin: 40px auto;
 }
 
+#bg-container {
+    position: absolute;
+    width: 100vw; height: 200vh;
+    overflow-x: hidden; overflow-y: visible;
+    top:0; left: 0;
+}
+
 /*--GLOBAL STYLES--*/
 .headertxt {
     background-color: Black;
@@ -244,6 +275,10 @@ nav {
 h4 {
     margin: 0;
 }
+
+a {color: #448; text-decoration: none; transition: 1s;}
+a:hover {color: #AAA; cursor: pointer; text-decoration: underline; transition: 1s;}
+a:visited {color: #444; text-decoration: none;}
 
 /*--COVERPAGE--*/
 /*Rules target vw:1080*/
@@ -639,8 +674,12 @@ h4 {
     position: relative;
 }
 
+#view-the-show-eyes {
+    width: 90vw; max-width: 900px;
+    
+}
 #viewing-eyes {
-    width: 60vw;
+    width: 100%;
     position: relative;
     margin: 0 auto;
 }
@@ -655,6 +694,9 @@ footer {
     padding: 10px;
     bottom: 0;
     line-height: 8pt;
+    display: block;
+    position: static;
+    bottom: 0;
 }
 footer a {
     color: #DFDFFF;
@@ -691,6 +733,7 @@ line-height: 1.5;
 cursor: pointer;
 border: 1px solid #ccc;
 border-right: 0;
+    display: none;
 }
 
 .dimensions-tab {
@@ -703,6 +746,7 @@ background-color: rgba(0, 0, 0, 0.5);
 border-radius: 0 10px 10px 0;
 z-index: 1;
 border-top: 1px solid #ccc; border-right: 1px solid #ccc; border-bottom: 1px solid #ccc;
+    display: none;
 }
 
 .dimensions-tab-arrow {
